@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap.min
+ *= require admin-lte/dist/css/AdminLTE.min
+ *= require admin-lte/dist/css/skins/skin-blue
+ *= require glyphicon-font
+ *= require font-awesome
+ *= require_self
+ */
+.navbar{
+ border-radius: 0px;
+}
+.header_bg{
+  background: #FFF;
+}
+.header{
+  padding: 2% 0px;
+}
+.no-padding{
+  padding: 0px;
+}
+.no-margin{
+  margin: 0px;
+}
+.search-on-header{
+  padding: 6% 0px;
+}
+.slider-bg{
+  background-image: url("/slider-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: top center;
+  background-size: cover;
+  height: 73vh;
+}
+.main-bg{
+  background: #FFF;
+  margin: 4% 0px;
+}
+.large-font{
+  font-size: 60px;
+}
