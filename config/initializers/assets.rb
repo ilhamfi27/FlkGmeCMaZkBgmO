@@ -9,6 +9,8 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 Rails.application.config.assets.precompile += %w( polyclinic/index.scss )
 Rails.application.config.assets.precompile += %w( landing_page/index.scss )
-Rails.application.config.assets.precompile += %w( admin/index.scss )
+Rails.application.config.assets.precompile += %w( officer/index.scss )
+Rails.application.config.assets.precompile += %w( sessions/new.scss )
+Rails.application.config.assets.precompile += %w( registrations/new.scss )
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )

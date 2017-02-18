@@ -1,0 +1,49 @@
+/h2
+/  | Sign up
+/= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+/  = f.error_notification
+/  .form-inputs
+/    = f.input :email, required: true, autofocus: true
+/    = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+/    = f.input :password_confirmation, required: true
+/  .form-actions
+/    = f.button :submit, "Sign up"
+/= render "users/shared/links"
+.image-bg
+.top-content
+  .inner-bg
+    .container
+      .row
+        .col-sm-8.col-sm-offset-2.text
+          h1
+            strong
+              | Bootstrap
+            |  Login Form
+          .description
+            p
+              |  This is a free responsive login form made with Bootstrap. Download it on 
+              a[href="http://azmind.com"]
+                strong
+                  | AZMIND
+              | , customize and use it as you like! 
+      .row
+        .col-sm-6.col-sm-offset-3.form-box
+          .form-top
+            .form-top-left
+              h3
+                | Login to our site
+              p
+                | Enter your username and password to log on:
+            .form-top-right
+              i.fa.fa-key
+          .form-bottom
+            = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .form-group
+                = f.input :username, required: false, placeholder: 'Username...', autofocus: true, label: false, input_html: { id: 'form-username', class: 'form-username form-control' }
+              .form-group
+                = f.input :password, required: false, placeholder: 'Password...', label: false, input_html: { id: 'form-username', class: 'form-username form-control' }
+              .form-group
+                = f.button :button, name: 'commit', class: 'btn-primary'
+              /.form-group
+              /  = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+/= render "users/shared/links"

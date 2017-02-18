@@ -1,0 +1,51 @@
+@import "login-form-elements";
+@import "login-form-styles";
+// body{
+//   line-height: 30px;
+//   text-align: center;
+// }
+.image-bg{
+  background-image:url("/slider-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  height: 100vh;
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px); 
+  z-index: 0;
+}
+.top-content{
+  position: absolute;
+  top: 0;
+  left: 4%;
+  z-index: 1;
+}
+.inner-bg {
+  padding: 0px 0 30px 0;
+}
+// 
+.top-content .text {
+	color: #000;
+}
+// 
+.top-content .text h1 { color: #000; }
+// 
+// .top-content .description {
+// 	margin: 20px 0 10px 0;
+// }
+// 
+// .top-content .description p { opacity: 0.8; }
+// 
+.top-content .description a {
+	color: #000;
+}
+// .top-content .description a:hover, 
+// .top-content .description a:focus { border-bottom: 1px dotted #000; }
+// 
+// .form-box {
+// 	margin-top: 35px;
+// }

@@ -10,9 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap.min
  *= require admin-lte/dist/css/AdminLTE.min
  *= require admin-lte/dist/css/skins/skin-blue
+ *= require bootstrap.min
  *= require glyphicon-font
  *= require font-awesome
  *= require_self
@@ -49,4 +49,7 @@
 }
 .large-font{
   font-size: 60px;
+}
+.login-form{
+  min-width: 300px;
 }
