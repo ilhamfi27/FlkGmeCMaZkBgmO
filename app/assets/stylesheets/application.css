@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require admin-lte/dist/css/AdminLTE.min
- *= require admin-lte/dist/css/skins/skin-blue
+ *= require admin-lte/dist/css/skins/skin-green
  *= require bootstrap.min
  *= require glyphicon-font
  *= require font-awesome
@@ -52,4 +52,10 @@
 }
 .login-form{
   min-width: 300px;
+}
+#app-alert{
+  position: fixed;
+  width: 100%;
+  top: 0%;
+  z-index: 1031;
 }

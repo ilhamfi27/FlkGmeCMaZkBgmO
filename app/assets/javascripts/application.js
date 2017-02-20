@@ -16,3 +16,9 @@
 //= require admin-lte/dist/js/app
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  $("#app-alert").alert();
+  $("#app-alert").fadeTo(2000, 500).fadeOut(500, function(){
+    $("#app-alert").fadeOut(500);
+  });
+})

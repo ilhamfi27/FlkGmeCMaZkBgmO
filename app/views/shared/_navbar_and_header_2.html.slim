@@ -1,13 +1,9 @@
 header.main-header
-  a.logo[href="index2.html"]
+  = link_to officer_index_path, class: "logo" do 
     span.logo-mini
-      b
-        | A
-      | LT
+      | Poliklinik
     span.logo-lg
-      b
-        | Admin
-      | LTE
+      | Poliklinik
   nav.navbar.navbar-static-top
     a.sidebar-toggle[href="#" data-toggle="offcanvas" role="button"]
       span.sr-only
@@ -179,20 +175,21 @@ header.main-header
                 | View all tasks
         li.dropdown.user.user-menu
           a.dropdown-toggle[href="#" data-toggle="dropdown"]
-            img.user-image[src="dist/img/user2-160x160.jpg" alt="User Image"]
+            = image_tag current_user.avatar.thumb.url, class: "user-image", alt: "User Image"
             span.hidden-xs
               = current_user.username
           ul.dropdown-menu
             li.user-header
-              img.img-circle[src="dist/img/user2-160x160.jpg" alt="User Image"]
+              = image_tag current_user.avatar.thumb.url, class: "img-circle", alt: "User Image"
               p
                 = current_user.username
                 small
                   = "Member since #{current_user.created_at}"
             li.user-footer
               .pull-left
-                a.btn.btn-default.btn-flat[href="#"]
-                  | Profile
+                = link_to edit_user_registration_path do
+                  button.btn.btn-default.btn-flat
+                    | Profile
               .pull-right
                 = link_to destroy_user_session_path, method: :delete do
                   button.btn.btn-default.btn-flat
@@ -201,7 +198,7 @@ aside.main-sidebar
   section.sidebar
     .user-panel
       .pull-left.image
-        img.img-circle[src="dist/img/user2-160x160.jpg" alt="User Image"]
+        = image_tag current_user.avatar.thumb.url
       .pull-left.info
         p
           = current_user.username

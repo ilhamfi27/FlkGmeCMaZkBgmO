@@ -12,5 +12,6 @@ Rails.application.config.assets.precompile += %w( landing_page/index.scss )
 Rails.application.config.assets.precompile += %w( officer/index.scss )
 Rails.application.config.assets.precompile += %w( sessions/new.scss )
 Rails.application.config.assets.precompile += %w( registrations/new.scss )
+Rails.application.config.assets.precompile += %w( user_profile/index.scss )
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
