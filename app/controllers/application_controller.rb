@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     sign_in_url = new_user_session_url
     if request.referer == sign_in_url
-      officer_index_path
+      officers_path
     else
       stored_location_for(resource) || request.referer || root_path
     end
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   
   def user_has_signed_in
     if user_signed_in?
-      redirect_to officer_index_path
+      redirect_to officers_path
     end
   end
 end

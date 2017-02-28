@@ -1,0 +1,8 @@
+= simple_form_for @medicine, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f|
+  = f.input :name, label: 'Nama Obat'
+  = f.input :types_of_medicine, label: 'Jenis Obat'
+  = f.input :category, label: 'Kategori'
+  = f.input :price, label: 'Harga'
+  = f.input :amount, label: 'Stok'
+  .col-md-2.col-md-offset-3
+    = f.button :submit, class: "btn btn-primary"

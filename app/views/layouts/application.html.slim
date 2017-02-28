@@ -14,7 +14,8 @@ html
     - if alert
       #app-alert.alert.alert-danger
         = alert
-    - if user_signed_in?
+    - if user_signed_in? && controller_name != "landing_page"
       wrapper.skin-green.sidebar-mini
         = render "shared/navbar_and_header_2"
-    = yield
+    == yield
+    == yield :javascript_in_file

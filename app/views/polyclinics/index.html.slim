@@ -1,0 +1,35 @@
+.content-wrapper
+  section.content-header
+    h1
+      |  Data Poliklinik
+  section.content
+    .row
+      .col-md-12
+        .box
+          .box-body
+            .table-responsive
+              table#data-obat.table.no-margin
+                thead
+                  tr
+                    th.text-center
+                      | No
+                    th.text-center
+                      | Nama Klinik
+                    th.text-center
+                      | Aksi
+                tbody.text-center
+                  - @polyclinics.each_with_index do |polyclinic, index|
+                    - number = index + 1
+                    tr
+                      td
+                        = number
+                      td
+                        = polyclinic.name
+                      td
+                        = link_to edit_polyclinic_path(polyclinic) do 
+                          button.btn.btn-success
+                            span.fa.fa-edit
+                        |   
+                        = link_to polyclinic_path(polyclinic), method: :delete, data: {confirm: "Apa anda yakin ?"} do 
+                          button.btn.btn-danger
+                            span.fa.fa-trash

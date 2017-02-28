@@ -1,0 +1,254 @@
+.content-wrapper
+  section.content-header
+    h1
+      |  Dashboard 
+  section.content
+    .row
+      .col-md-12
+        .box
+          .box-header.with-border
+            h3.box-title
+              | Data Pasien
+            .box-tools.pull-right
+              button.btn.btn-box-tool[type="button" data-widget="collapse"]
+                i.fa.fa-minus
+              .btn-group
+                button.btn.btn-box-tool.dropdown-toggle[type="button" data-toggle="dropdown"]
+                  i.fa.fa-wrench
+                ul.dropdown-menu[role="menu"]
+                  li
+                    a[href="#"]
+                      | Action
+                  li
+                    a[href="#"]
+                      | Another action
+                  li
+                    a[href="#"]
+                      | Something else here
+                  li.divider
+                  li
+                    a[href="#"]
+                      | Separated link
+              button.btn.btn-box-tool[type="button" data-widget="remove"]
+                i.fa.fa-times
+          .box-body
+            .table-responsive
+              table#data-pasien.table.no-margin
+                thead
+                  tr
+                    th
+                      | No
+                    th
+                      | Nama
+                    th
+                      | Alamat
+                    th
+                      | Jenis Kelamin
+                    th
+                      | Usia
+                    th
+                      | No Telepon
+                    th
+                      | Tanggal Daftar
+                tbody
+                  - @patients.each_with_index do |patient, index|
+                    - number = index + 1
+                    tr
+                      td
+                        = number
+                      td
+                        = patient.name
+                      td
+                        = patient.address
+                      td
+                        = patient.gender
+                      td
+                        = patient.age
+                      td
+                        = patient.phone_number
+                      td
+                        = patient.created_at.to_date.strftime("%e %B %Y")
+    .row
+      .col-md-12
+        .box
+          .box-header.with-border
+            h3.box-title
+              | Data Dokter
+            .box-tools.pull-right
+              button.btn.btn-box-tool[type="button" data-widget="collapse"]
+                i.fa.fa-minus
+              .btn-group
+                button.btn.btn-box-tool.dropdown-toggle[type="button" data-toggle="dropdown"]
+                  i.fa.fa-wrench
+                ul.dropdown-menu[role="menu"]
+                  li
+                    a[href="#"]
+                      | Action
+                  li
+                    a[href="#"]
+                      | Another action
+                  li
+                    a[href="#"]
+                      | Something else here
+                  li.divider
+                  li
+                    a[href="#"]
+                      | Separated link
+              button.btn.btn-box-tool[type="button" data-widget="remove"]
+                i.fa.fa-times
+          .box-body
+            .table-responsive
+              table#data-dokter.table.no-margin
+                thead
+                  tr
+                    th
+                      | No
+                    th
+                      | Nama
+                    th
+                      | Spesialis
+                    th
+                      | Alamat
+                    th
+                      | Telepon
+                    th
+                      | Poliklinik
+                    th
+                      | Tarif
+                tbody
+                  - @doctors.each_with_index do |doctor, index|
+                    - number = index + 1
+                    tr
+                      td
+                        = number
+                      td
+                        = doctor.name
+                      td
+                        = doctor.specialist
+                      td
+                        = doctor.address
+                      td
+                        = doctor.phone_number
+                      td
+                        = doctor.polyclinic.name
+                      td
+                        = doctor.created_at.to_date.strftime("%e %B %Y")
+    .row
+      .col-md-12
+        .box
+          .box-header.with-border
+            h3.box-title
+              | Data Poliklinik
+            .box-tools.pull-right
+              button.btn.btn-box-tool[type="button" data-widget="collapse"]
+                i.fa.fa-minus
+              .btn-group
+                button.btn.btn-box-tool.dropdown-toggle[type="button" data-toggle="dropdown"]
+                  i.fa.fa-wrench
+                ul.dropdown-menu[role="menu"]
+                  li
+                    a[href="#"]
+                      | Action
+                  li
+                    a[href="#"]
+                      | Another action
+                  li
+                    a[href="#"]
+                      | Something else here
+                  li.divider
+                  li
+                    a[href="#"]
+                      | Separated link
+              button.btn.btn-box-tool[type="button" data-widget="remove"]
+                i.fa.fa-times
+          .box-body
+            .table-responsive
+              table#data-poliklinik.table.no-margin
+                thead
+                  tr
+                    th
+                      | No
+                    th
+                      | Poliklinik
+                    th
+                      | List Dokter
+                tbody
+                  - @polyclinics.each_with_index do |polyclinic, index|
+                    - number = index + 1
+                    tr
+                      td
+                        = number
+                      td
+                        = polyclinic.name
+                      td
+                        = polyclinic.doctors.collect{|d| "Dr. #{d.name}"}.join(", ")
+    .row
+      .col-md-12
+        .box
+          .box-header.with-border
+            h3.box-title
+              | Data Obat
+            .box-tools.pull-right
+              button.btn.btn-box-tool[type="button" data-widget="collapse"]
+                i.fa.fa-minus
+              .btn-group
+                button.btn.btn-box-tool.dropdown-toggle[type="button" data-toggle="dropdown"]
+                  i.fa.fa-wrench
+                ul.dropdown-menu[role="menu"]
+                  li
+                    a[href="#"]
+                      | Action
+                  li
+                    a[href="#"]
+                      | Another action
+                  li
+                    a[href="#"]
+                      | Something else here
+                  li.divider
+                  li
+                    a[href="#"]
+                      | Separated link
+              button.btn.btn-box-tool[type="button" data-widget="remove"]
+                i.fa.fa-times
+          .box-body
+            .table-responsive
+              table#data-obat.table.no-margin
+                thead
+                  tr
+                    th
+                      | No
+                    th
+                      | Nama
+                    th
+                      | Jenis
+                    th
+                      | Kategori
+                    th
+                      | Harga
+                    th
+                      | Stok
+                    th
+                      | Tanggal Ditambahkan
+                tbody
+                  - @medicines.each_with_index do |medicine, index|
+                    - number = index + 1
+                    tr
+                      td
+                        = number
+                      td
+                        = medicine.name
+                      td
+                        = medicine.types_of_medicine
+                      td
+                        = medicine.category
+                      td
+                        = "Rp. #{medicine.price}"
+                      td
+                        = "#{medicine.amount} buah"
+                      td
+                        = medicine.created_at.to_date.strftime("%e %B %Y")
+- content_for :javascript_in_file do
+  javascript:
+    $(document).ready(function() {
+      $('#data-dokter, #data-pasien, #data-poliklinik, #data-obat').DataTable();
+    });

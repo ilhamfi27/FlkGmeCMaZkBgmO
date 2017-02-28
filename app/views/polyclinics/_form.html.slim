@@ -1,0 +1,4 @@
+= simple_form_for @polyclinic, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f|
+  = f.input :name, label: 'Nama Klinik'
+  .col-md-2.col-md-offset-3
+    = f.button :submit, class: "btn btn-primary"

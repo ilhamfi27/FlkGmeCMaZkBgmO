@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap.min
 //= require admin-lte/dist/js/app
+//= require jquery.dataTables.min
+//= require dataTables.bootstrap.min
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){

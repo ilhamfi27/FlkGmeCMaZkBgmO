@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :polyclinic
-  resources :officer, only: [:index]
-  resources :user_profile, only: [:index]
+  resources :doctors
+  resources :medicines, except: [:show]
+  resources :polyclinics
+  resources :officers, only: [:index, :new, :create]
+  resources :reports, only: [:index]
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   root 'landing_page#index'
 end

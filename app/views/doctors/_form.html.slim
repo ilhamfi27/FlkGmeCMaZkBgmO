@@ -1,0 +1,9 @@
+= simple_form_for @doctor, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f|
+  = f.input :name, label: 'Nama Dokter'
+  = f.input :specialist, label: 'Spesialis'
+  = f.input :address, label: 'Alamat'
+  = f.input :phone_number, label: 'No Telepon'
+  = f.input :polyclinic_id, label: 'Poliklinik', collection: @polyclinics_collections
+  = f.input :fee, label: 'Tarif Dokter'
+  .col-md-2.col-md-offset-3
+    = f.button :submit, class: "btn btn-primary"

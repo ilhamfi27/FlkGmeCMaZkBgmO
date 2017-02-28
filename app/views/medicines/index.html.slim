@@ -1,0 +1,51 @@
+.content-wrapper
+  section.content-header
+    h1
+      |  Semua Data Obat
+  section.content
+    .row
+      .col-md-12
+        .box
+          .box-body
+            .table-responsive
+              table#data-obat.table.no-margin
+                thead
+                  tr
+                    th.text-center
+                      | No
+                    th.text-center
+                      | Nama Obat
+                    th.text-center
+                      | Jenis Obat
+                    th.text-center
+                      | Kategori
+                    th.text-center
+                      | Harga
+                    th.text-center
+                      | Stok
+                    th.text-center
+                      | Aksi
+                tbody.text-center
+                  - @medicines.each_with_index do |medicine, index|
+                    - number = index + 1
+                    tr
+                      td
+                        = number
+                      td
+                        = medicine.name
+                      td
+                        = medicine.types_of_medicine
+                      td
+                        = medicine.category
+                      td
+                        = medicine.price
+                      td
+                        = medicine.amount
+                      td
+                        = link_to edit_medicine_path(medicine) do 
+                          button.btn.btn-success
+                            span.fa.fa-edit
+                        |   
+                        = link_to medicine_path(medicine), method: :delete, data: {confirm: "Apa anda yakin ?"} do 
+                          button.btn.btn-danger
+                            span.fa.fa-trash

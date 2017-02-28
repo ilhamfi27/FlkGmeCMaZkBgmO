@@ -1,0 +1,53 @@
+.content-wrapper
+  section.content-header
+    h1
+      |  Semua Data Obat
+  section.content
+    .row
+      .col-md-12
+        .box
+          .box-body
+            .table-responsive
+              table#data-obat.table.no-margin
+                thead
+                  tr
+                    th.text-center
+                      | No
+                    th.text-center
+                      | Nama Dokter
+                    th.text-center
+                      | Spesialis
+                    th.text-center
+                      | Alamat
+                    th.text-center
+                      | No Telepon
+                    th.text-center
+                      | Kode Poliklinik
+                    th.text-center
+                      | Tarif Dokter
+                tbody.text-center
+                  - @doctors.each_with_index do |doctor, index|
+                    - number = index + 1
+                    tr
+                      td
+                        = number
+                      td
+                        = doctor.name
+                      td
+                        = doctor.specialist
+                      td
+                        = doctor.address
+                      td
+                        = doctor.phone_number
+                      td
+                        = doctor.polyclinic_id
+                      td
+                        = doctor.fee
+                      td
+                        = link_to edit_doctor_path(doctor) do 
+                          button.btn.btn-success
+                            span.fa.fa-edit
+                        |   
+                        = link_to doctor_path(doctor), method: :delete, data: {confirm: "Apa anda yakin ?"} do 
+                          button.btn.btn-danger
+                            span.fa.fa-trash

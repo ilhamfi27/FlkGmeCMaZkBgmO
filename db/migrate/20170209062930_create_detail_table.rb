@@ -1,11 +1,9 @@
- class CreateDetailTable < ActiveRecord::Migration
+class CreateDetailTable < ActiveRecord::Migration
   def change
-    create_table "Detail", id: false do |t|
-      t.primary_key "NomorResep"
-      t.integer "KodeObat",    null: false
-      t.string "Harga",        null: false, default: ""
-      t.string "Dosis",        null: false, default: ""
-      t.integer "SubTotal",    null: false
+    create_table :details do |t|
+      t.integer :price,       null: false, default: 0
+      t.string :doses,        null: false, default: ""
+      t.integer :sub_total,    null: false
     
       t.timestamps null: false
     end

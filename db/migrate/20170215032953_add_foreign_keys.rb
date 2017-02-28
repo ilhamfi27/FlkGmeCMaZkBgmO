@@ -1,13 +1,13 @@
 class AddForeignKeys < ActiveRecord::Migration
   def change
-    add_foreign_key "Detail", "Obat", column: "KodeObat", primary_key: "KodeObat", on_delete: :cascade
-    add_foreign_key "Resep", "Dokter", column: "KodeDkt", primary_key: "KodeDkt", on_delete: :cascade
-    add_foreign_key "Resep", "Pasien", column: "KodePsn", primary_key: "KodePsn", on_delete: :cascade
-    add_foreign_key "Resep", "Poliklinik", column: "kodePlk", primary_key: "kodePlk", on_delete: :cascade
-    add_foreign_key "Dokter", "Poliklinik", column: "KodePlk", primary_key: "kodePlk", on_delete: :cascade
-    add_foreign_key "Pendaftaran", "Dokter", column: "KodeDkt", primary_key: "KodeDkt", on_delete: :cascade
-    add_foreign_key "Pendaftaran", "Pasien", column: "KodePsn", primary_key: "KodePsn", on_delete: :cascade
-    add_foreign_key "Pendaftaran", "Poliklinik", column: "kodePlk", primary_key: "kodePlk", on_delete: :cascade
-    add_foreign_key "Pembayaran", "Pasien", column: "KodePsn", primary_key: "KodePsn", on_delete: :cascade
+    add_reference :details, :medicine, index: true, foreign_key: true
+    add_reference :recipes, :doctor, index: true, foreign_key: true
+    add_reference :recipes, :patient, index: true, foreign_key: true
+    add_reference :recipes, :polyclinic, index: true, foreign_key: true
+    add_reference :doctors, :polyclinic, index: true, foreign_key: true
+    add_reference :registrations, :doctor, index: true, foreign_key: true
+    add_reference :registrations, :patient, index: true, foreign_key: true
+    add_reference :registrations, :polyclinic, index: true, foreign_key: true
+    add_reference :payments, :patient, index: true, foreign_key: true
   end
 end

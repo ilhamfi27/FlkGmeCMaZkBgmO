@@ -1,10 +1,8 @@
 class CreatePaymentTable < ActiveRecord::Migration
   def change
-    create_table "Pembayaran", id: false do |t|
-      t.primary_key "NomorByr"
-      t.integer "KodePsn",     null: false
-      t.string "TanggalByr",   null: false, default: ""
-      t.string "JumlahByr",    null: false, default: ""
+    create_table :payments do |t|
+      t.date :payment_date,    null: false
+      t.integer :total_payment,  null: false
       
       t.timestamps null: false
     end

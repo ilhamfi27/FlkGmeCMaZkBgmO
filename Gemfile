@@ -32,6 +32,9 @@ gem 'slim-rails'
 ## Auth library
 gem 'devise'
 
+# Custom devise encryptable
+gem 'devise-encryptable'
+
 # Uploading Photo
 gem 'carrierwave'
 gem 'mini_magick'

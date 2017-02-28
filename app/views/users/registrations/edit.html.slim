@@ -4,28 +4,56 @@
       |  Profile Edit 
       = resource_name.to_s.humanize
   section.content
-    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f|
+    = simple_form_for(resource, as: resource_name, url: user_registration_path, html: { method: :put, multipart: true }) do |f|
       = f.error_notification
-      .form-inputs
-        = f.input :first_name, required: true, autofocus: true
-        = f.input :last_name, required: true
-        = f.input :username, required: true
-        = f.input :avatar, as: :file, required: true
-        - if f.object.avatar?
-          = image_tag f.object.avatar.medium.url
-        = f.input :email, required: true
-        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-          p
-            | Currently waiting confirmation for: 
-            = resource.unconfirmed_email
-        = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
-        = f.input :password_confirmation, required: false
-        = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
-      .form-actions
-        = f.button :submit, "Update"
-    h3
-      | Cancel my account
-    p
-      | Unhappy? 
-      = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-    = link_to "Back", :back
+      .row
+        .col-md-8
+          .panel.panel-default
+            .panel-body
+              .row
+                .col-md-4
+                  .form-group
+                    = f.input :username, required: true
+                .col-md-8
+                  .form-group
+                    = f.input :email, required: true
+              .row
+                .col-md-7
+                  .form-group
+                    = f.input :first_name, required: true, autofocus: true
+                .col-md-5
+                  .form-group
+                    = f.input :last_name, required: true
+              .row
+                .col-md-6
+                  .form-group
+                    = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
+                .col-md-6
+                  .form-group
+                    = f.input :password_confirmation, required: false
+              .row  
+                .col-md-4.col-md-offset-4
+                  = f.input :avatar, as: :file, required: true
+                  - if f.object.avatar?
+                    = image_tag f.object.avatar.medium.url
+              = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
+              = f.button :submit, "Update"
+            .panel-footer
+              h3
+                | Cancel my account
+              p
+                | Unhappy? 
+                = link_to "Cancel my account", edit_user_registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+              = link_to "Back", :back
+        .col-md-4
+          .card.hovercard
+            .cardheader
+            .avatar
+              = image_tag current_user.avatar.medium.url, class: "img-circle", alt: "User Image"
+            .info
+              .title
+                = "#{current_user.first_name} #{current_user.last_name}"
+              .desc
+                = "#{current_user.level.humanize}"
+              h5
+                = "Since #{time_ago_in_words(current_user.created_at)} ago"
