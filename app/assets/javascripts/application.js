@@ -17,7 +17,6 @@
 //= require jquery.dataTables.min
 //= require dataTables.bootstrap.min
 //= require turbolinks
-//= require_tree .
 $(document).ready(function(){
   $("#app-alert").alert();
   $("#app-alert").fadeTo(2000, 500).fadeOut(500, function(){
