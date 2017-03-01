@@ -39,6 +39,12 @@ gem 'devise-encryptable'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'js-routes'
+gem 'friendly_id', '~> 5.1.0'
+
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
