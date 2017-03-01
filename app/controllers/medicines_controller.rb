@@ -23,7 +23,7 @@ class MedicinesController < ApplicationController
   
   def update
     if @medicine.update(medicine_params)
-      redirect_to medicines_path, notice: 'Medicine was successfully updated.'
+      redirect_to officers_path, notice: 'Medicine was successfully updated.'
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class MedicinesController < ApplicationController
   
   def destroy
     @medicine.destroy
-    redirect_to medicines_path, notice: 'Medicine was successfully destroyed.'
+    redirect_to officers_path, notice: 'Medicine was successfully destroyed.'
   end
   
   private

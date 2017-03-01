@@ -24,7 +24,7 @@ class DoctorsController < ApplicationController
   
   def update
     if @doctor.update(doctor_params)
-      redirect_to doctors_path, notice: 'Doctor was successfully updated.'
+      redirect_to officers_path, notice: 'Doctor was successfully updated.'
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class DoctorsController < ApplicationController
   
   def destroy
     @doctor.destroy
-    redirect_to doctors_path, notice: 'Doctor was successfully destroyed.'
+    redirect_to officers_path, notice: 'Doctor was successfully destroyed.'
   end
   
   private

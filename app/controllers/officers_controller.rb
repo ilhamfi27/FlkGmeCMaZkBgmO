@@ -1,4 +1,4 @@
-class OfficersController < ApplicationController
+  class OfficersController < ApplicationController
   skip_before_action :user_has_signed_in
   before_action :all_patients, :all_doctors, :all_polyclinics, :all_medicines, only: [:index]
   
@@ -38,6 +38,6 @@ class OfficersController < ApplicationController
     end
 
     def new_officer_params
-     params.require(:user).permit(:username, :first_name, :last_name, :avatar, :level)
+     params.require(:user).permit(:email, :username, :first_name, :last_name, :level)
     end
 end

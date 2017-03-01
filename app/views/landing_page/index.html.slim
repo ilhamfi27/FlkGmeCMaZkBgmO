@@ -5,9 +5,15 @@
 .main-bg
   .container
     .row
-      - 3.times do
-        .col-md-4.text-center
-          i.glyphicon.glyphicon-picture.large-font
-          h2 NAMANYA
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          button.btn.btn-primary Read More
+      - @polyclinics.each do |polyclinic|
+        .col-md-4.col-sm-4
+          .polyclinic-list-box
+            center
+              span.fa.fa-hospital-o.doctors-icon
+            h2.text-center
+              = polyclinic.name 
+            ol
+              h4 List dokter
+              - polyclinic.doctors.each_with_index do |doctor|
+                li
+                  = "Dr. #{doctor.name}"

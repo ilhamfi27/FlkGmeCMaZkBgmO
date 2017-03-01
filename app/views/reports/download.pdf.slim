@@ -1,0 +1,32 @@
+.container
+	center
+		.report-header
+			h1 REPORT PASIEN KLINIK
+			.table-responsive
+				table.table.table-striped
+					thead
+						tr
+							th
+								| #
+							th
+								| Pasien
+							th
+								| Dokter
+							th
+								| Klinik
+							th
+								| Tanggal Daftar
+					tbody
+						- data.each_with_index do |data, index|
+							- number = index + 1
+							tr
+								th[scope='row']
+									= number
+								td
+									= data.patient.name
+								td
+									= data.doctor.name
+								td
+									= data.polyclinic.name
+								td
+									= data.created_at.to_date.strftime("%e %B %Y")

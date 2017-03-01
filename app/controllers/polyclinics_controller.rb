@@ -23,7 +23,7 @@ class PolyclinicsController < ApplicationController
   
   def update
     if @polyclinic.update(polyclinic_params)
-      redirect_to polyclinics_path, notice: 'Polyclinic was successfully updated.'
+      redirect_to officers_path, notice: 'Polyclinic was successfully updated.'
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class PolyclinicsController < ApplicationController
   
   def destroy
     @polyclinic.destroy
-    redirect_to polyclinics_path, notice: 'Polyclinic was successfully destroyed.'
+    redirect_to officers_path, notice: 'Polyclinic was successfully destroyed.'
   end
   
   private

@@ -115,6 +115,8 @@
                       | Poliklinik
                     th
                       | Tarif
+                    th
+                      | Aksi
                 tbody
                   - @doctors.each_with_index do |doctor, index|
                     - number = index + 1
@@ -133,6 +135,14 @@
                         = doctor.polyclinic.name
                       td
                         = doctor.created_at.to_date.strftime("%e %B %Y")
+                      td
+                        = link_to edit_doctor_path(doctor.id) do
+                          button.btn.btn-primary
+                            span.glyphicon.glyphicon-edit
+                        |   
+                        = link_to doctor_path(doctor.id), method: :delete, data: { confirm: 'Data dokter akan di hapus, anda yakin ?' } do
+                          button.btn.btn-danger
+                            span.glyphicon.glyphicon-trash
     .row
       .col-md-12
         .box
@@ -172,6 +182,8 @@
                       | Poliklinik
                     th
                       | List Dokter
+                    th
+                      | Aksi
                 tbody
                   - @polyclinics.each_with_index do |polyclinic, index|
                     - number = index + 1
@@ -182,6 +194,14 @@
                         = polyclinic.name
                       td
                         = polyclinic.doctors.collect{|d| "Dr. #{d.name}"}.join(", ")
+                      td
+                        = link_to edit_polyclinic_path(polyclinic.id) do
+                          button.btn.btn-primary
+                            span.glyphicon.glyphicon-edit
+                        |   
+                        = link_to polyclinic_path(polyclinic.id), method: :delete, data: { confirm: 'Data dokter akan di hapus, anda yakin ?' } do
+                          button.btn.btn-danger
+                            span.glyphicon.glyphicon-trash
     .row
       .col-md-12
         .box
@@ -229,6 +249,8 @@
                       | Stok
                     th
                       | Tanggal Ditambahkan
+                    th
+                      | Aksi
                 tbody
                   - @medicines.each_with_index do |medicine, index|
                     - number = index + 1
@@ -247,6 +269,14 @@
                         = "#{medicine.amount} buah"
                       td
                         = medicine.created_at.to_date.strftime("%e %B %Y")
+                      td
+                        = link_to edit_medicine_path(medicine.id) do
+                          button.btn.btn-primary
+                            span.glyphicon.glyphicon-edit
+                        |   
+                        = link_to medicine_path(medicine.id), method: :delete, data: { confirm: 'Data dokter akan di hapus, anda yakin ?' } do
+                          button.btn.btn-danger
+                            span.glyphicon.glyphicon-trash
 - content_for :javascript_in_file do
   javascript:
     $(document).ready(function() {

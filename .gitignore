@@ -13,7 +13,7 @@
 /db/schema.rb
 /config/secrets.yml
 /public/assets/
-/public/upliads/
+/public/uploads/
 
 # Used by dotenv library to load environment variables.
 # .env
